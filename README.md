@@ -1,6 +1,14 @@
 # star-trek-attack-wing
 Game of Star Trek Attack Wing in Rust on Dioxus (desktop, web browser)
 
+# Data
+
+Check this for data
+https://docs.google.com/spreadsheets/d/1aeo9a95bnjVV5ahojfcfDv0jsFMM-dcY-4MF1DH2xgU/edit?gid=25819877#gid=25819877
+
+There is also the obvious fleet builder data
+https://github.com/PrudentAndorian/PrudentAndorian.github.io/tree/main/src/data
+
 # Development
 
 Your new bare-bones project includes minimal organization with a single `main.rs` file and a few assets.
