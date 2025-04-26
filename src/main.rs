@@ -1,3 +1,5 @@
+mod components;
+
 use dioxus::prelude::*;
 
 #[derive(Debug, Clone, Routable, PartialEq)]

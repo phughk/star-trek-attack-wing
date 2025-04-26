@@ -8,7 +8,7 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
-# rgeometry = "0.10.2"
+rgeometry = "0.10.2"
 
 [features]
 default = ["desktop"]
