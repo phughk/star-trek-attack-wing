@@ -8,13 +8,16 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
+dioxus-desktop = { version = "0.6.3", optional = true }
+dioxus-mobile = { version = "0.6.2", optional = true }
+dioxus-web = { version = "0.6.3", optional = true }
 rgeometry = "0.10.2"
 
 [features]
 default = ["desktop"]
-web = ["dioxus/web"]
-desktop = ["dioxus/desktop"]
-mobile = ["dioxus/mobile"]
+web = ["dioxus/web", "dioxus-web"]
+desktop = ["dioxus/desktop", "dioxus-desktop"]
+mobile = ["dioxus/mobile", "dioxus-mobile"]
 
 [profile]
 

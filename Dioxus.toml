@@ -3,7 +3,7 @@
 [web.app]
 
 # HTML title tag content
-title = "star-trek-attack-wing"
+title = "Star Trek: Attack Wing"
 
 # include `assets` in web platform
 [web.resource]
@@ -19,3 +19,8 @@ script = []
 # Javascript code file
 # serve: [dev-server] only
 script = []
+
+[bundle]
+category = "BoardGame"
+short_description = "Star Trek: Attack Wing"
+long_description = "Star Trek: Attack Wing is a tactical space combat game set in the Star Trek universe. Players control ships from the Star Trek universe and engage in strategic battles."

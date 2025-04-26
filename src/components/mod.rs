@@ -1,1 +1,1 @@
-mod pannable_space;
+pub mod pannable_space;

@@ -4067,6 +4067,9 @@ name = "star-trek-attack-wing"
 version = "0.1.0"
 dependencies = [
  "dioxus",
+ "dioxus-desktop",
+ "dioxus-mobile",
+ "dioxus-web",
  "rgeometry",
 ]
 

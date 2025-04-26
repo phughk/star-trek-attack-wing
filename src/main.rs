@@ -1,6 +1,13 @@
 mod components;
+mod game;
+
+use components::pannable_space::ComponentPannableSpace;
 
 use dioxus::prelude::*;
+use dioxus_desktop::{WindowBuilder, WindowCloseBehaviour};
+use dioxus_desktop::tao::monitor::MonitorHandle;
+use dioxus_desktop::tao::window::Fullscreen;
+use crate::components::pannable_space::PannableSpaceProps;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -14,11 +21,18 @@ enum Route {
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
-const HEADER_SVG: Asset = asset!("/assets/header.svg");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 fn main() {
-    dioxus::launch(App);
+    // Desktop close window is broken and needs to be tinkered with so close is available
+    // let config = dioxus_desktop::Config::new().with_close_behaviour(WindowCloseBehaviour::CloseWindow).with_window(WindowBuilder::new().with_closable(true));
+    #[cfg(feature = "desktop")]
+    let config = dioxus_desktop::Config::new();
+    #[cfg(feature = "web")]
+    let config = dioxus_web::Config::new();
+    #[cfg(feature = "mobile")]
+    let config = dioxus_mobile::Config::new();
+    LaunchBuilder::new().with_cfg(config).launch(App);
 }
 
 #[component]
@@ -30,30 +44,11 @@ fn App() -> Element {
     }
 }
 
-#[component]
-pub fn Hero() -> Element {
-    rsx! {
-        div {
-            id: "hero",
-            img { src: HEADER_SVG, id: "header" }
-            div { id: "links",
-                a { href: "https://dioxuslabs.com/learn/0.6/", "📚 Learn Dioxus" }
-                a { href: "https://dioxuslabs.com/awesome", "🚀 Awesome Dioxus" }
-                a { href: "https://github.com/dioxus-community/", "📡 Community Libraries" }
-                a { href: "https://github.com/DioxusLabs/sdk", "⚙️ Dioxus Development Kit" }
-                a { href: "https://marketplace.visualstudio.com/items?itemName=DioxusLabs.dioxus", "💫 VSCode Extension" }
-                a { href: "https://discord.gg/XgGxMSkvUM", "👋 Community Discord" }
-            }
-        }
-    }
-}
-
 /// Home page
 #[component]
 fn Home() -> Element {
     rsx! {
-        Hero {}
-
+        ComponentPannableSpace {width: 24.5}
     }
 }
 
