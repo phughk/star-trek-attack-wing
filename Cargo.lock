@@ -4070,6 +4070,7 @@ dependencies = [
  "dioxus-desktop",
  "dioxus-mobile",
  "dioxus-web",
+ "lazy_static",
  "rgeometry",
 ]
 
