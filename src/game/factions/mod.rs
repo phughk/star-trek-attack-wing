@@ -12,6 +12,7 @@ mod borg;
 mod species_8472;
 mod mirror_universe;
 mod q_continuum;
+mod ship;
 
 pub enum StawFaction {
     All,
@@ -33,22 +34,6 @@ pub enum StawFaction {
     Xindi,
 }
 
-pub struct StawShipArchetype {
-    pub name: &'static str,
-    pub unique: bool,
-    pub class: &'static str,
-    pub factions: &'static [StawFaction],
-    pub primary_weapon: u8,
-    pub agility: u8,
-    pub hull: u8,
-    pub shields: u8,
-    pub ship_type: ShipType,
-    pub upgrade_bar: &'static [UpgradeType],
-    pub special_ability_description: &'static str,
-    pub special_ability: ShipSpecialAbility,
-    pub action_bar: &'static [ActionType],
-    pub squad_point_cost: u8,
-}
 
 pub struct UpgradeArchetype {
     pub name: &'static str,
@@ -90,12 +75,6 @@ pub enum UpgradeAbility {
 
 }
 
-pub enum ShipType {
-    DeepSpace9,
-    UssVoyager,
-    EnterpriseE,
-}
-
 pub enum UpgradeType {
     /// Looks like 3 tadpoles
     Squadron,
@@ -128,9 +107,4 @@ pub enum ActionType {
     Regenerate,
     /// There is no icon. Only "Action: " description
     SpecialAction{todo: ()}
-}
-
-pub enum ShipSpecialAbility {
-    DeepSpace9_1,
-    DeepSpace9_2,
 }
