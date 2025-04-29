@@ -13,6 +13,7 @@ mod species_8472;
 mod mirror_universe;
 mod q_continuum;
 mod ship;
+mod upgrade;
 
 pub enum StawFaction {
     All,
@@ -59,21 +60,13 @@ pub enum UpgradeRestriction {
     AllRoundFiringArc,
 }
 
-pub enum UpgradeRangeType {
+pub enum UpgradeRangeType {}
 
-}
+pub enum UpgradeIcon {}
 
-pub enum UpgradeIcon {
+pub enum UpgradeAttackValue {}
 
-}
-
-pub enum UpgradeAttackValue {
-
-}
-
-pub enum UpgradeAbility {
-
-}
+pub enum UpgradeAbility {}
 
 pub enum UpgradeType {
     /// Looks like 3 tadpoles
@@ -106,5 +99,5 @@ pub enum ActionType {
     /// Looks like DNA double helix
     Regenerate,
     /// There is no icon. Only "Action: " description
-    SpecialAction{todo: ()}
+    SpecialAction { todo: () },
 }
