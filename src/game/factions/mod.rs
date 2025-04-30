@@ -1,19 +1,5 @@
-mod federation;
-mod klingon;
-mod vulcan;
-mod bajoran;
-mod independent;
-mod ferengi;
-mod kazon;
-mod xindi;
-mod romulan;
-mod dominion;
-mod borg;
-mod species_8472;
-mod mirror_universe;
-mod q_continuum;
-mod ship;
-mod upgrade;
+pub mod ship;
+pub mod upgrade;
 
 pub enum StawFaction {
     All,
