@@ -35,7 +35,6 @@ pub enum StawFaction {
     Xindi,
 }
 
-
 pub struct UpgradeArchetype {
     pub name: &'static str,
     pub ability_description: &'static str,
