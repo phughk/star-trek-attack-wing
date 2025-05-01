@@ -1,3 +1,24 @@
+pub enum ShipBasePlate {
+    Regular,
+    Large,
+}
+
+impl ShipBasePlate {
+    pub fn width(&self) -> f64 {
+        match self {
+            ShipBasePlate::Regular => 33.0,
+            ShipBasePlate::Large => 66.0,
+        }
+    }
+
+    pub fn height(&self) -> f64 {
+        match self {
+            ShipBasePlate::Regular => 38.0,
+            ShipBasePlate::Large => 76.0
+        }
+    }
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum ShipClass {
     MirandaClass,
@@ -170,5 +191,9 @@ impl ShipClass {
             ShipClass::PrometheusClass => "Prometheus Class",
             ShipClass::OlympicClass => "Olympic Class",
         }
+    }
+
+    pub fn dimensions(&self) -> ShipBasePlate {
+        todo!()
     }
 }
