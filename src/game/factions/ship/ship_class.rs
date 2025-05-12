@@ -1,20 +1,29 @@
 pub enum ShipBasePlate {
+    /// Everything should be this size
     Regular,
+    /// Whatever "large" means, probably some of the Borg stuff
     Large,
+    /// 11 inches, taken from
+    /// https://boardgamegeek.com/thread/1512710/whats-the-exact-size-of-this
+    LargeCircle,
 }
 
 impl ShipBasePlate {
+    /// Width in mm
     pub fn width(&self) -> f64 {
         match self {
             ShipBasePlate::Regular => 33.0,
             ShipBasePlate::Large => 66.0,
+            ShipBasePlate::LargeCircle => 280.0,
         }
     }
 
+    /// Height in mm
     pub fn height(&self) -> f64 {
         match self {
             ShipBasePlate::Regular => 38.0,
-            ShipBasePlate::Large => 76.0
+            ShipBasePlate::Large => 76.0,
+            ShipBasePlate::LargeCircle => 280.0,
         }
     }
 }
@@ -194,6 +203,13 @@ impl ShipClass {
     }
 
     pub fn dimensions(&self) -> ShipBasePlate {
-        todo!()
+        match self {
+            ShipClass::NorClassOrbitalSpaceStation => {
+                ShipBasePlate::LargeCircle
+            }
+            _ => {
+                ShipBasePlate::Regular
+            }
+        }
     }
 }
