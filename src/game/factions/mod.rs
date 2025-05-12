@@ -1,5 +1,6 @@
 pub mod ship;
 pub mod upgrade;
+mod sets;
 
 pub enum StawFaction {
     All,

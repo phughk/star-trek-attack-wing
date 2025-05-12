@@ -2,13 +2,14 @@ pub mod ability;
 pub mod ship_class;
 
 use crate::game::factions::{ActionType, StawFaction, UpgradeType};
+use crate::game::factions::sets::StawSet;
 use crate::game::factions::ship::ability::ShipAbility;
 use crate::game::factions::ship::ability::*;
 pub use crate::game::factions::ship::ship_class::ShipClass;
 
 pub struct StawShipArchetype {
     pub id: &'static str,
-    pub sets: &'static [&'static str],
+    pub sets: &'static [StawSet],
     pub name: &'static str,
     pub unique: bool,
     pub class: ShipClass,
@@ -29,7 +30,7 @@ pub struct StawShipArchetype {
 pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
     StawShipArchetype {
         id: "S340",
-        sets: &["75011"],
+        sets: &[StawSet::S75011],
         name: "U.S.S. Tian An Men",
         class: ShipClass::MirandaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -46,7 +47,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S339",
-        sets: &["75011"],
+        sets: &[StawSet::S75011],
         name: "U.S.S. Odyssey",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -63,7 +64,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S342",
-        sets: &["75011"],
+        sets: &[StawSet::S75011],
         name: "U.S.S. Spector",
         class: ShipClass::AkiraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -80,7 +81,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S348",
-        sets: &["75010"],
+        sets: &[StawSet::S75010],
         name: "Klingon Starship",
         class: ShipClass::NeghvarClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -97,7 +98,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S341",
-        sets: &["75011"],
+        sets: &[StawSet::S75011],
         name: "Federation Starship",
         class: ShipClass::AkiraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -114,7 +115,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S336",
-        sets: &["75010"],
+        sets: &[StawSet::S75010],
         name: "I.K.S. K'Tanco",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -131,7 +132,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S347",
-        sets: &["75010"],
+        sets: &[StawSet::S75010],
         name: "I.K.S. Kos'Karii",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -148,7 +149,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S346",
-        sets: &["75010"],
+        sets: &[StawSet::S75010],
         name: "Klingon/Independent Starship",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -165,7 +166,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S345",
-        sets: &["75010"],
+        sets: &[StawSet::S75010],
         name: "I.K.S. Devwl",
         class: ShipClass::NeghvarClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -182,7 +183,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S343",
-        sets: &["75011"],
+        sets: &[StawSet::S75011],
         name: "U.S.S. Sao Paulo",
         class: ShipClass::DefiantClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -199,7 +200,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S349",
-        sets: &["75010"],
+        sets: &[StawSet::S75010],
         name: "I.K.S. T'Acog",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -216,7 +217,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S329",
-        sets: &["75009"],
+        sets: &[StawSet::S75009],
         name: "Dukat's Bird-of-Prey",
         class: ShipClass::KlingonBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -233,7 +234,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S334",
-        sets: &["75009"],
+        sets: &[StawSet::S75009],
         name: "Vetar",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -250,7 +251,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S332",
-        sets: &["75009"],
+        sets: &[StawSet::S75009],
         name: "Orias",
         class: ShipClass::CardassianKeldonClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -267,7 +268,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S331",
-        sets: &["75009"],
+        sets: &[StawSet::S75009],
         name: "Preloc",
         class: ShipClass::CardassianKeldonClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -284,7 +285,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S333",
-        sets: &["75009"],
+        sets: &[StawSet::S75009],
         name: "Dominion/Klingon Starship",
         class: ShipClass::KlingonBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -301,7 +302,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S338",
-        sets: &["75008"],
+        sets: &[StawSet::S75008],
         name: "Kir'Shara",
         class: ShipClass::DKyrClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -318,7 +319,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S330",
-        sets: &["75008"],
+        sets: &[StawSet::S75008],
         name: "V'Shar",
         class: ShipClass::DKyrClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -335,7 +336,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S337",
-        sets: &["75008"],
+        sets: &[StawSet::S75008],
         name: "U.S.S. Intrepid",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -352,7 +353,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S335",
-        sets: &["75008"],
+        sets: &[StawSet::S75008],
         name: "U.S.S. T'Kumbra",
         class: ShipClass::NebulaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -369,7 +370,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S323",
-        sets: &["75006"],
+        sets: &[StawSet::S75006],
         name: "I.K.S. Klothos",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -386,7 +387,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S322",
-        sets: &["75006"],
+        sets: &[StawSet::S75006],
         name: "I.K.S. Devisor",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -403,7 +404,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S319",
-        sets: &["75006"],
+        sets: &[StawSet::S75006],
         name: "I.R.W. Talon",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -420,7 +421,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S318",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "Assimilation Target Prime",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -437,7 +438,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S321",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "Sphere 634",
         class: ShipClass::BorgSphere,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -454,7 +455,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S325",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "Scout 609",
         class: ShipClass::BorgScoutCube,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -471,7 +472,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S326",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "U.S.S. Voyager",
         class: ShipClass::IntrepidClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -489,7 +490,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S324",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "Federation/Borg Starship",
         class: ShipClass::IntrepidClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -506,7 +507,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S320",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "Federation/Borg Starship",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -523,7 +524,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S317",
-        sets: &["75006"],
+        sets: &[StawSet::S75006],
         name: "U.S.S. Enterprise",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -540,7 +541,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S316",
-        sets: &["75004"],
+        sets: &[StawSet::S75004],
         name: "U.S.S. Dauntless",
         class: ShipClass::DauntlessClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -557,7 +558,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S315",
-        sets: &["75004"],
+        sets: &[StawSet::S75004],
         name: "Harvester Prime",
         class: ShipClass::VidiianBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -574,7 +575,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S314",
-        sets: &["75004"],
+        sets: &[StawSet::S75004],
         name: "Telev's Battle Cruiser",
         class: ShipClass::AndorianBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -591,7 +592,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S313",
-        sets: &["75004"],
+        sets: &[StawSet::S75004],
         name: "Guinguin",
         class: ShipClass::MaquisRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -608,7 +609,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S312",
-        sets: &["75004"],
+        sets: &[StawSet::S75004],
         name: "Maquis Starship",
         class: ShipClass::MaquisRaiderB,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -625,7 +626,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S311",
-        sets: &["75005"],
+        sets: &[StawSet::S75005],
         name: "U.S.S. Enterprise",
         class: ShipClass::ConstitutionClassKelvin,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -642,7 +643,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S310",
-        sets: &["75005"],
+        sets: &[StawSet::S75005],
         name: "U.S.S. Enterprise-A",
         class: ShipClass::ConstitutionClassKelvin,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -659,7 +660,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S309",
-        sets: &["75005"],
+        sets: &[StawSet::S75005],
         name: "Federation Starship",
         class: ShipClass::ConstitutionClassKelvin,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -676,7 +677,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S308",
-        sets: &["75005"],
+        sets: &[StawSet::S75005],
         name: "I.K.S. Amar",
         class: ShipClass::WarbirdClass,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::BattleStations, ActionType::Cloak, ActionType::SensorEcho],
@@ -693,7 +694,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S307",
-        sets: &["75005"],
+        sets: &[StawSet::S75005],
         name: "I.K.S. Suvwl",
         class: ShipClass::WarbirdClass,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::BattleStations, ActionType::Cloak, ActionType::SensorEcho],
@@ -710,7 +711,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S306",
-        sets: &["75005"],
+        sets: &[StawSet::S75005],
         name: "Klingon Starship",
         class: ShipClass::WarbirdClass,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::BattleStations, ActionType::Cloak, ActionType::SensorEcho],
@@ -727,7 +728,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S305",
-        sets: &["73041"],
+        sets: &[StawSet::S73041],
         name: "Fighter Squadron 1",
         class: ShipClass::FederationAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -744,7 +745,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S304",
-        sets: &["73041"],
+        sets: &[StawSet::S73041],
         name: "Fighter Squadron 3",
         class: ShipClass::FederationAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -761,7 +762,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S302",
-        sets: &["73042"],
+        sets: &[StawSet::S73042],
         name: "Hirogen Hunting Vessel",
         class: ShipClass::HirogenWarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -778,7 +779,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S301",
-        sets: &["73032"],
+        sets: &[StawSet::S73032],
         name: "4th Wing Patrol Ship",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -795,7 +796,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S300",
-        sets: &["73031"],
+        sets: &[StawSet::S73031],
         name: "Gress'sril",
         class: ShipClass::GornRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -812,7 +813,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S299",
-        sets: &["73031"],
+        sets: &[StawSet::S73031],
         name: "Gorn Starship",
         class: ShipClass::GornRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -829,7 +830,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S298",
-        sets: &["75003"],
+        sets: &[StawSet::S75003],
         name: "Lurin's Bird-of-Prey",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -846,7 +847,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S297",
-        sets: &["75003"],
+        sets: &[StawSet::S75003],
         name: "Ferengi/Klingon Starship",
         unique: false,
         class: ShipClass::BRelClass,
@@ -863,7 +864,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S296",
-        sets: &["75003"],
+        sets: &[StawSet::S75003],
         name: "Prak's Marauder",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -880,7 +881,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S295",
-        sets: &["75003"],
+        sets: &[StawSet::S75003],
         name: "Solok's Marauder",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -897,7 +898,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S294",
-        sets: &["75003"],
+        sets: &[StawSet::S75003],
         name: "Goss' Shuttle",
         class: ShipClass::FerengiShuttle,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -914,7 +915,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S293",
-        sets: &["75003", "72013"],
+        sets: &[StawSet::S75003, StawSet::S72013],
         name: "Ferengi Starship",
         class: ShipClass::FerengiShuttle,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -931,7 +932,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S292",
-        sets: &["73002"],
+        sets: &[StawSet::S73002],
         name: "Queen Vessel Prime",
         class: ShipClass::BorgOctahedron,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -948,7 +949,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S291",
-        sets: &["73002", "71530"],
+        sets: &[StawSet::S73002, StawSet::S71530],
         name: "Borg Starship",
         class: ShipClass::BorgOctahedron,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -965,7 +966,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S290",
-        sets: &["73001"],
+        sets: &[StawSet::S73001],
         name: "Goss' Marauder",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -982,7 +983,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S289",
-        sets: &["75002"],
+        sets: &[StawSet::S75002],
         name: "2nd Division Battleship",
         class: ShipClass::JemHadarBattleship,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -999,7 +1000,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S288",
-        sets: &["75002"],
+        sets: &[StawSet::S75002],
         name: "Jem'Hadar Battleship",
         class: ShipClass::JemHadarBattleship,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1016,7 +1017,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S287",
-        sets: &["75002"],
+        sets: &[StawSet::S75002],
         name: "3rd Division Battle Cruiser",
         class: ShipClass::JemHadarBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1033,7 +1034,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S286",
-        sets: &["75002", "71524"],
+        sets: &[StawSet::S75002, StawSet::S71524],
         name: "Dominion Starship",
         class: ShipClass::JemHadarBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1050,7 +1051,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S285",
-        sets: &["75002"],
+        sets: &[StawSet::S75002],
         name: "2nd Wing Patrol Ship",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1067,7 +1068,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S284",
-        sets: &["75002"],
+        sets: &[StawSet::S75002],
         name: "6th Wing Patrol Ship",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1084,7 +1085,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S283",
-        sets: &["75002", "73032", "71271", "3rd_wing_attack_ship"],
+        sets: &[StawSet::S75002, StawSet::S73032, StawSet::S71271, StawSet::S3rd_wing_attack_ship],
         name: "Dominion Starship",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1101,7 +1102,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S282",
-        sets: &["75001"],
+        sets: &[StawSet::S75001],
         name: "P.W.B. Tomal",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1118,7 +1119,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S281",
-        sets: &["75001"],
+        sets: &[StawSet::S75001],
         name: "Romulan Starship",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1135,7 +1136,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S280",
-        sets: &["75001"],
+        sets: &[StawSet::S75001],
         name: "I.R.W. Suran",
         class: ShipClass::ValdoreClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1152,7 +1153,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S279",
-        sets: &["75001", "71123", "72010"],
+        sets: &[StawSet::S75001, StawSet::S71123, StawSet::S72010],
         name: "Romulan Starship",
         class: ShipClass::ValdoreClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1169,7 +1170,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S278",
-        sets: &["75001"],
+        sets: &[StawSet::S75001],
         name: "Jarok's Scout Vessel",
         class: ShipClass::RomulanScoutVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -1186,7 +1187,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S277",
-        sets: &["75001", "71274"],
+        sets: &[StawSet::S75001, StawSet::S71274],
         name: "Romulan Starship",
         class: ShipClass::RomulanScoutVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -1203,7 +1204,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S276",
-        sets: &["75001"],
+        sets: &[StawSet::S75001],
         name: "Mirok's Science Vessel",
         class: ShipClass::RomulanScienceVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -1220,7 +1221,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S275",
-        sets: &["75001"],
+        sets: &[StawSet::S75001],
         name: "Romulan Starship",
         class: ShipClass::RomulanScienceVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -1237,7 +1238,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S274",
-        sets: &["2017core"],
+        sets: &[StawSet::S2017core],
         name: "U.S.S. Enterprise-D",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1254,7 +1255,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S273",
-        sets: &["2017core", "80000"],
+        sets: &[StawSet::S2017core, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1271,7 +1272,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S272",
-        sets: &["2017core"],
+        sets: &[StawSet::S2017core],
         name: "U.S.S. Sutherland",
         class: ShipClass::NebulaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1288,7 +1289,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S271",
-        sets: &["2017core", "OP4Prize", "72011", "80000"],
+        sets: &[StawSet::S2017core, StawSet::SOP4Prize, StawSet::S72011, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::NebulaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1305,7 +1306,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S344",
-        sets: &["75008"],
+        sets: &[StawSet::S75008],
         name: "Federation Starship",
         class: ShipClass::NebulaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1322,7 +1323,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S270",
-        sets: &["2017core"],
+        sets: &[StawSet::S2017core],
         name: "K'mpec's Attack Cruiser",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1339,7 +1340,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S269",
-        sets: &["2017core", "71120", "72241", "72280p"],
+        sets: &[StawSet::S2017core, StawSet::S71120, StawSet::S72241, StawSet::S72280p],
         name: "Klingon Starship",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1356,7 +1357,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S268",
-        sets: &["2017core"],
+        sets: &[StawSet::S2017core],
         name: "I.K.S. Vorn",
         class: ShipClass::KVortClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1373,7 +1374,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S267",
-        sets: &["72014wp"],
+        sets: &[StawSet::S72014wp],
         name: "Prototype 02",
         class: ShipClass::RomulanDroneShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1390,7 +1391,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S266",
-        sets: &["72014wp", "71536"],
+        sets: &[StawSet::S72014wp, StawSet::S71536],
         name: "Romulan Starship",
         class: ShipClass::RomulanDroneShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1407,7 +1408,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S265",
-        sets: &["72013wp"],
+        sets: &[StawSet::S72013wp],
         name: "Dreadnought",
         class: ShipClass::CardassianAtr4107,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1424,7 +1425,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S264",
-        sets: &["72013wp", "71212"],
+        sets: &[StawSet::S72013wp, StawSet::S71212],
         name: "Dominion Starship",
         class: ShipClass::CardassianAtr4107,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1441,7 +1442,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S263",
-        sets: &["72012wp"],
+        sets: &[StawSet::S72012wp],
         name: "I.K.S. Ves Batlh",
         class: ShipClass::RaptorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1458,7 +1459,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S262",
-        sets: &["72012wp", "71448"],
+        sets: &[StawSet::S72012wp, StawSet::S71448],
         name: "Klingon Starship",
         class: ShipClass::RaptorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1475,7 +1476,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S261",
-        sets: &["72011wp"],
+        sets: &[StawSet::S72011wp],
         name: "U.S.S. Grissom",
         class: ShipClass::OberthClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1493,7 +1494,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S260",
-        sets: &["72011wp", "71801", "80000"],
+        sets: &[StawSet::S72011wp, StawSet::S71801, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::OberthClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1510,7 +1511,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S259",
-        sets: &["72300p"],
+        sets: &[StawSet::S72300p],
         name: "Delta Flyer II",
         class: ShipClass::DeltaFlyerClassShuttlecraft,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -1527,7 +1528,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S258",
-        sets: &["72290p"],
+        sets: &[StawSet::S72290p],
         name: "U.S.S. Defiant NCC-1764",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1544,7 +1545,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S257",
-        sets: &["72293"],
+        sets: &[StawSet::S72293],
         name: "Muratas",
         class: ShipClass::XindiReptilianWarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1561,7 +1562,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S256",
-        sets: &["72284p"],
+        sets: &[StawSet::S72284p],
         name: "U.S.S. Enterprise-D",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1578,7 +1579,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S255",
-        sets: &["72281"],
+        sets: &[StawSet::S72281],
         name: "Calindra",
         class: ShipClass::XindiAquaticCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1595,7 +1596,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S254",
-        sets: &["72282gp"],
+        sets: &[StawSet::S72282gp],
         name: "Sela's Warbird",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1612,7 +1613,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S253",
-        sets: &["72282p"],
+        sets: &[StawSet::S72282p],
         name: "I.K.S. Toral",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1629,7 +1630,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S252",
-        sets: &["72282p", "72015"],
+        sets: &[StawSet::S72282p, StawSet::S72015],
         name: "Klingon Starship",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1646,7 +1647,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S251",
-        sets: &["72281p"],
+        sets: &[StawSet::S72281p],
         name: "I.K.S. Hegh'ta",
         class: ShipClass::KVortClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1663,7 +1664,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S250",
-        sets: &["72273"],
+        sets: &[StawSet::S72273],
         name: "Orassin",
         class: ShipClass::XindiInsectoidStarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -1680,7 +1681,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S249",
-        sets: &["72280p"],
+        sets: &[StawSet::S72280p],
         name: "I.K.S. Bortas",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1697,7 +1698,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S248",
-        sets: &["72263"],
+        sets: &[StawSet::S72263],
         name: "U.S.S. Enterprise-B",
         class: ShipClass::ExcelsiorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1714,7 +1715,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S247",
-        sets: &["72270p"],
+        sets: &[StawSet::S72270p],
         name: "Kohlars Battle Cruiser",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1731,7 +1732,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S246",
-        sets: &["72262p"],
+        sets: &[StawSet::S72262p],
         name: "I.R.W. Rateg",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1748,7 +1749,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S245",
-        sets: &["72253"],
+        sets: &[StawSet::S72253],
         name: "U.S.S. Venture",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1765,7 +1766,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S244",
-        sets: &["72261p"],
+        sets: &[StawSet::S72261p],
         name: "U.S.S. Cairo",
         class: ShipClass::ExcelsiorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1782,7 +1783,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S243",
-        sets: &["72260gp"],
+        sets: &[StawSet::S72260gp],
         name: "U.S.S. Enterprise-A",
         class: ShipClass::ConstitutionRefitClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1799,7 +1800,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S242",
-        sets: &["72260p"],
+        sets: &[StawSet::S72260p],
         name: "H.M.S. Bounty",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1817,7 +1818,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S241",
-        sets: &["72255"],
+        sets: &[StawSet::S72255],
         name: "Cube 384",
         class: ShipClass::BorgCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -1834,7 +1835,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S240",
-        sets: &["72255"],
+        sets: &[StawSet::S72255],
         name: "Sphere 936",
         class: ShipClass::BorgSphere,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -1851,7 +1852,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S239",
-        sets: &["72236p"],
+        sets: &[StawSet::S72236p],
         name: "Kruge's Bird-of-Prey",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1868,7 +1869,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S238",
-        sets: &["72242"],
+        sets: &[StawSet::S72242],
         name: "I.R.W. Algeron",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1885,7 +1886,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S237",
-        sets: &["72242", "75006"],
+        sets: &[StawSet::S72242, StawSet::S75006],
         name: "Romulan Battlecruiser",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1902,7 +1903,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S236",
-        sets: &["72235p"],
+        sets: &[StawSet::S72235p],
         name: "U.S.S. Reliant",
         class: ShipClass::MirandaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1919,7 +1920,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S235",
-        sets: &["72241"],
+        sets: &[StawSet::S72241],
         name: "I.K.S. Drovana",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -1936,7 +1937,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S234",
-        sets: &["72234p"],
+        sets: &[StawSet::S72234p],
         name: "U.S.S. Constellation",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1953,7 +1954,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S233",
-        sets: &["72224p"],
+        sets: &[StawSet::S72224p],
         name: "Xindus",
         class: ShipClass::XindiReptilianWarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1970,7 +1971,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S232",
-        sets: &["72224p", "72293"],
+        sets: &[StawSet::S72224p, StawSet::S72293],
         name: "Xindi Starship",
         class: ShipClass::XindiReptilianWarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -1987,7 +1988,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S231",
-        sets: &["72233"],
+        sets: &[StawSet::S72233],
         name: "I.R.W. Jazkal",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2004,7 +2005,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S230",
-        sets: &["72232"],
+        sets: &[StawSet::S72232],
         name: "I.K.S. Amar",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2021,7 +2022,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S229",
-        sets: &["72231"],
+        sets: &[StawSet::S72231],
         name: "U.S.S. Montgolfier",
         class: ShipClass::Saber,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2038,7 +2039,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S227",
-        sets: &["71225"],
+        sets: &[StawSet::S71225],
         name: "Weapon Zero",
         class: ShipClass::XindiWeapon,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2055,7 +2056,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S226",
-        sets: &["71225"],
+        sets: &[StawSet::S71225],
         name: "Xindi Starship",
         class: ShipClass::XindiWeapon,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2072,7 +2073,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S225",
-        sets: &["71203"],
+        sets: &[StawSet::S71203],
         name: "Scorpion 4",
         class: ShipClass::ScorpionClassAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -2089,7 +2090,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S224",
-        sets: &["71203"],
+        sets: &[StawSet::S71203],
         name: "ROMULAN ATTACK FIGHTERS",
         class: ShipClass::ScorpionClassAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -2106,7 +2107,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S223",
-        sets: &["72221p"],
+        sets: &[StawSet::S72221p],
         name: "I.R.W. T'MET",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2123,7 +2124,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S222",
-        sets: &["72221p", "OP3Prize", "71511", "72282gp"],
+        sets: &[StawSet::S72221p, StawSet::SOP3Prize, StawSet::S71511, StawSet::S72282gp],
         name: "ROMULAN STARSHIP",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2140,7 +2141,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S221",
-        sets: &["71212"],
+        sets: &[StawSet::S71212],
         name: "Dreadnought",
         class: ShipClass::CardassianAtr4107,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2157,7 +2158,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S220",
-        sets: &["71192"],
+        sets: &[StawSet::S71192],
         name: "Halik Raider",
         class: ShipClass::KazonRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -2174,7 +2175,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S219",
-        sets: &["71192", "71282"],
+        sets: &[StawSet::S71192, StawSet::S71282],
         name: "Kazon Starship",
         class: ShipClass::KazonRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -2191,7 +2192,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S218",
-        sets: &["71211"],
+        sets: &[StawSet::S71211],
         name: "DENORIOS",
         class: ShipClass::BajoranSolarSailor,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -2208,7 +2209,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S217",
-        sets: &["71211"],
+        sets: &[StawSet::S71211],
         name: "Bajoran Starship",
         class: ShipClass::BajoranSolarSailor,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -2225,7 +2226,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S216",
-        sets: &["71213"],
+        sets: &[StawSet::S71213],
         name: "Robinson",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2242,7 +2243,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S215",
-        sets: &["71221"],
+        sets: &[StawSet::S71221],
         name: "U.S.S. Valiant",
         class: ShipClass::DefiantClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2259,7 +2260,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S213",
-        sets: &["71223"],
+        sets: &[StawSet::S71223],
         name: "KUMARI",
         class: ShipClass::AndorianBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2276,7 +2277,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S212",
-        sets: &["71223", "75004"],
+        sets: &[StawSet::S71223, StawSet::S75004],
         name: "ANDORIAN STARSHIP",
         class: ShipClass::AndorianBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2293,7 +2294,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S211",
-        sets: &["71201"],
+        sets: &[StawSet::S71201],
         name: "U.S.S. Hathaway",
         class: ShipClass::ConstellationClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2311,7 +2312,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S209",
-        sets: &["71222"],
+        sets: &[StawSet::S71222],
         name: "R.I.S. Pi",
         class: ShipClass::RomulanScoutVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -2328,7 +2329,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S208",
-        sets: &["71222"],
+        sets: &[StawSet::S71222],
         name: "Romulan Starship",
         class: ShipClass::RomulanScoutVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -2345,7 +2346,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S207",
-        sets: &["71120"],
+        sets: &[StawSet::S71120],
         name: "U.S.S. Enterprise-D",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2363,7 +2364,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S206",
-        sets: &["71120", "72253", "72284p", "80000", "75011"],
+        sets: &[StawSet::S71120, StawSet::S72253, StawSet::S72284p, StawSet::S80000, StawSet::S75011],
         name: "Federation Starship",
         class: ShipClass::GalaxyClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2380,7 +2381,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S205",
-        sets: &["71120"],
+        sets: &[StawSet::S71120],
         name: "I.R.W. Khazara",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2397,7 +2398,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S204",
-        sets: &["71120", "blind_belak"],
+        sets: &[StawSet::S71120, StawSet::Sblind_belak],
         name: "Romulan Starship",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2414,7 +2415,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S203",
-        sets: &["71120"],
+        sets: &[StawSet::S71120],
         name: "I.K.S. Maht-H'A",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2431,7 +2432,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S202",
-        sets: &["71121"],
+        sets: &[StawSet::S71121],
         name: "U.S.S. Reliant",
         class: ShipClass::MirandaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2448,7 +2449,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S201",
-        sets: &["71121", "72235p", "80000", "75011"],
+        sets: &[StawSet::S71121, StawSet::S72235p, StawSet::S80000, StawSet::S75011],
         name: "Federation Starship",
         class: ShipClass::MirandaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2465,7 +2466,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S200",
-        sets: &["71122", "72240"],
+        sets: &[StawSet::S71122, StawSet::S72240],
         name: "U.S.S. Enterprise",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2483,7 +2484,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S199",
-        sets: &["72290p", "71122", "72240", "72234p", "72002p", "75006", "75008"],
+        sets: &[StawSet::S72290p, StawSet::S71122, StawSet::S72240, StawSet::S72234p, StawSet::S72002p, StawSet::S75006, StawSet::S75008],
         name: "Federation Starship",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2500,7 +2501,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S198",
-        sets: &["71123"],
+        sets: &[StawSet::S71123],
         name: "I.R.W. Valdore",
         class: ShipClass::ValdoreClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2517,7 +2518,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S197",
-        sets: &["71124"],
+        sets: &[StawSet::S71124],
         name: "R.I.S. Apnex",
         class: ShipClass::RomulanScienceVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Cloak, ActionType::SensorEcho],
@@ -2534,7 +2535,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S196",
-        sets: &["71124", "72016"],
+        sets: &[StawSet::S71124, StawSet::S72016],
         name: "Romulan Science Vessel",
         class: ShipClass::RomulanScienceVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Cloak, ActionType::SensorEcho],
@@ -2551,7 +2552,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S195",
-        sets: &["71125", "72272"],
+        sets: &[StawSet::S71125, StawSet::S72272],
         name: "I.K.S. Gr'oth",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -2568,7 +2569,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S194",
-        sets: &["71125", "72270p", "72272", "75006"],
+        sets: &[StawSet::S71125, StawSet::S72270p, StawSet::S72272, StawSet::S75006],
         name: "Klingon Battlecruiser",
         class: ShipClass::D7Class,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -2585,7 +2586,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S193",
-        sets: &["71126", "72251"],
+        sets: &[StawSet::S71126, StawSet::S72251],
         name: "I.K.S. Negh'var",
         class: ShipClass::NeghvarClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2602,7 +2603,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S192",
-        sets: &["71126", "72251"],
+        sets: &[StawSet::S71126, StawSet::S72251],
         name: "Klingon Starship",
         class: ShipClass::NeghvarClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2619,7 +2620,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S191",
-        sets: &["71127"],
+        sets: &[StawSet::S71127],
         name: "Kraxon",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2636,7 +2637,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S190",
-        sets: &["71127", "71513b", "71798", "blind_aldara", "75009"],
+        sets: &[StawSet::S71127, StawSet::S71513b, StawSet::S71798, StawSet::Sblind_aldara, StawSet::S75009],
         name: "Dominion Starship",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2653,7 +2654,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S189",
-        sets: &["71128"],
+        sets: &[StawSet::S71128],
         name: "Gor Portas",
         class: ShipClass::BreenBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2670,7 +2671,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S188",
-        sets: &["71128"],
+        sets: &[StawSet::S71128],
         name: "Dominion Starship",
         class: ShipClass::BreenBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2687,7 +2688,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S187",
-        sets: &["OP1Prize"],
+        sets: &[StawSet::SOP1Prize],
         name: "Krayton",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2704,7 +2705,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S186",
-        sets: &["OP1Prize", "71646a", "71806", "blind_nunks_marauder", "75003", "73001"],
+        sets: &[StawSet::SOP1Prize, StawSet::S71646a, StawSet::S71806, StawSet::Sblind_nunks_marauder, StawSet::S75003, StawSet::S73001],
         name: "Ferengi Marauder",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -2721,7 +2722,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S185",
-        sets: &["OP1Participation"],
+        sets: &[StawSet::SOP1Participation],
         name: "Deep Space 9",
         class: ShipClass::NorClassOrbitalSpaceStation,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2738,7 +2739,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S184",
-        sets: &["OP1Participation"],
+        sets: &[StawSet::SOP1Participation],
         name: "Abandoned Space Station",
         class: ShipClass::NorClassOrbitalSpaceStation,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2755,7 +2756,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S183",
-        sets: &["OP2Prize"],
+        sets: &[StawSet::SOP2Prize],
         name: "I.K.S. Ch'tang",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2772,7 +2773,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S182",
-        sets: &["OP2Prize", "71512", "72236p"],
+        sets: &[StawSet::SOP2Prize, StawSet::S71512, StawSet::S72236p],
         name: "Klingon Starship",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2789,7 +2790,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S181",
-        sets: &["OP3Prize"],
+        sets: &[StawSet::SOP3Prize],
         name: "P.W.B. Aj'Rmr",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2806,7 +2807,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S180",
-        sets: &["71268", "72282"],
+        sets: &[StawSet::S71268, StawSet::S72282],
         name: "U.S.S. Defiant",
         class: ShipClass::DefiantClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2824,7 +2825,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S179",
-        sets: &["71268", "72282", "71221", "80000", "75011"],
+        sets: &[StawSet::S71268, StawSet::S72282, StawSet::S71221, StawSet::S80000, StawSet::S75011],
         name: "Federation Starship",
         class: ShipClass::DefiantClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2841,7 +2842,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S178",
-        sets: &["71269"],
+        sets: &[StawSet::S71269],
         name: "I.K.S. Kronos One",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2858,7 +2859,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S177",
-        sets: &["71269", "72232", "72009", "75010"],
+        sets: &[StawSet::S71269, StawSet::S72232, StawSet::S72009, StawSet::S75010],
         name: "Klingon Starship",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2875,7 +2876,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S176",
-        sets: &["71270"],
+        sets: &[StawSet::S71270],
         name: "I.R.W. Praetus",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2892,7 +2893,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S175",
-        sets: &["71270", "72233"],
+        sets: &[StawSet::S71270, StawSet::S72233],
         name: "Romulan Starship",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -2909,7 +2910,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S174",
-        sets: &["71271"],
+        sets: &[StawSet::S71271],
         name: "5th Wing Patrol Ship",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2926,7 +2927,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S173",
-        sets: &["71273"],
+        sets: &[StawSet::S71273],
         name: "I.K.S. Koraga",
         class: ShipClass::KVortClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2943,7 +2944,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S172",
-        sets: &["2017core", "71273", "71996", "blind_buruk", "72281p"],
+        sets: &[StawSet::S2017core, StawSet::S71273, StawSet::S71996, StawSet::Sblind_buruk, StawSet::S72281p],
         name: "Klingon Starship",
         class: ShipClass::KVortClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -2960,7 +2961,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S171",
-        sets: &["71275", "72262"],
+        sets: &[StawSet::S71275, StawSet::S72262],
         name: "Koranak",
         class: ShipClass::CardassianKeldonClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2977,7 +2978,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S170",
-        sets: &["71275", "72262", "75009"],
+        sets: &[StawSet::S71275, StawSet::S72262, StawSet::S75009],
         name: "Dominion Starship",
         class: ShipClass::CardassianKeldonClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -2994,7 +2995,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S169",
-        sets: &["71272", "72292"],
+        sets: &[StawSet::S71272, StawSet::S72292],
         name: "U.S.S. Excelsior",
         class: ShipClass::ExcelsiorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3011,7 +3012,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S168",
-        sets: &["71272", "72292", "72261p", "72263", "blind_lakota", "80001"],
+        sets: &[StawSet::S71272, StawSet::S72292, StawSet::S72261p, StawSet::S72263, StawSet::Sblind_lakota, StawSet::S80001],
         name: "Federation Starship",
         class: ShipClass::ExcelsiorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3028,7 +3029,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S167",
-        sets: &["71274"],
+        sets: &[StawSet::S71274],
         name: "R.I.S. Vo",
         class: ShipClass::RomulanScoutVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::Cloak, ActionType::SensorEcho],
@@ -3045,7 +3046,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S166",
-        sets: &["OP4Prize"],
+        sets: &[StawSet::SOP4Prize],
         name: "U.S.S. Sutherland",
         class: ShipClass::NebulaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3062,7 +3063,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S165",
-        sets: &["OP5Prize"],
+        sets: &[StawSet::SOP5Prize],
         name: "Rav Laerst",
         class: ShipClass::BreenBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3079,7 +3080,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S164",
-        sets: &["OP5Prize"],
+        sets: &[StawSet::SOP5Prize],
         name: "Dominion Starship",
         class: ShipClass::BreenBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3096,7 +3097,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S163",
-        sets: &["71276"],
+        sets: &[StawSet::S71276],
         name: "U.S.S. Equinox",
         class: ShipClass::NovaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3113,7 +3114,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S162",
-        sets: &["71276", "80000"],
+        sets: &[StawSet::S71276, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::NovaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3130,7 +3131,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S161",
-        sets: &["71448"],
+        sets: &[StawSet::S71448],
         name: "I.K.S. Somraw",
         class: ShipClass::RaptorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3147,7 +3148,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S160",
-        sets: &["71278"],
+        sets: &[StawSet::S71278],
         name: "I.R.W. Gal Gath'thong",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -3164,7 +3165,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S159",
-        sets: &["71278", "72262p"],
+        sets: &[StawSet::S71278, StawSet::S72262p],
         name: "Romulan Starship",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -3181,7 +3182,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S158",
-        sets: &["71279"],
+        sets: &[StawSet::S71279],
         name: "4th Division Battleship",
         class: ShipClass::JemHadarBattleship,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3198,7 +3199,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S157",
-        sets: &["OP6Prize"],
+        sets: &[StawSet::SOP6Prize],
         name: "Akorem",
         class: ShipClass::BajoranScoutShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3215,7 +3216,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S156",
-        sets: &["OP6Prize", "71803"],
+        sets: &[StawSet::SOP6Prize, StawSet::S71803],
         name: "Bajoran Starship",
         class: ShipClass::BajoranScoutShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3232,7 +3233,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S155",
-        sets: &["OP6Participation"],
+        sets: &[StawSet::SOP6Participation],
         name: "Federation Attack Fighter",
         class: ShipClass::FederationAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -3249,7 +3250,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S154",
-        sets: &["OP5Participation"],
+        sets: &[StawSet::SOP5Participation],
         name: "Hideki Class Attack Fighter",
         class: ShipClass::HidekiClassAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -3266,7 +3267,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S153",
-        sets: &["71283", "72283"],
+        sets: &[StawSet::S71283, StawSet::S72283],
         name: "Borg Sphere 4270",
         class: ShipClass::BorgSphere,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3283,7 +3284,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S152",
-        sets: &["71283", "72283"],
+        sets: &[StawSet::S71283, StawSet::S72283],
         name: "Borg Starship",
         class: ShipClass::BorgSphere,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3300,7 +3301,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S151",
-        sets: &["72255", "75007"],
+        sets: &[StawSet::S72255, StawSet::S75007],
         name: "Borg Starship",
         class: ShipClass::BorgSphere,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3317,7 +3318,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S150",
-        sets: &["71280", "72261"],
+        sets: &[StawSet::S71280, StawSet::S72261],
         name: "U.S.S. Voyager",
         class: ShipClass::IntrepidClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3335,7 +3336,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S149",
-        sets: &["71280", "72261"],
+        sets: &[StawSet::S71280, StawSet::S72261],
         name: "Federation Starship",
         class: ShipClass::IntrepidClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3352,7 +3353,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S148",
-        sets: &["71282"],
+        sets: &[StawSet::S71282],
         name: "Nistrim Raider",
         class: ShipClass::KazonRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -3369,7 +3370,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S146",
-        sets: &["71281", "72291"],
+        sets: &[StawSet::S71281, StawSet::S72291],
         name: "Bioship Alpha",
         class: ShipClass::Species8472Bioship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3386,7 +3387,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S145",
-        sets: &["71281", "72291", "72012", "blind_bioship"],
+        sets: &[StawSet::S71281, StawSet::S72291, StawSet::S72012, StawSet::Sblind_bioship],
         name: "Species 8472 Starship",
         class: ShipClass::Species8472Bioship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3403,7 +3404,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S144",
-        sets: &["OPWebPrize", "71795"],
+        sets: &[StawSet::SOPWebPrize, StawSet::S71795],
         name: "Tholia One",
         class: ShipClass::TholianVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3420,7 +3421,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S143",
-        sets: &["OPWebPrize", "71795"],
+        sets: &[StawSet::SOPWebPrize, StawSet::S71795],
         name: "Tholian Starship",
         class: ShipClass::TholianVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3437,7 +3438,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S142",
-        sets: &["71446"],
+        sets: &[StawSet::S71446],
         name: "D'Kyr",
         class: ShipClass::DKyrClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3454,7 +3455,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S140",
-        sets: &["71445"],
+        sets: &[StawSet::S71445],
         name: "Interceptor 5",
         class: ShipClass::BajoranInterceptor,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3471,7 +3472,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S139",
-        sets: &["71444"],
+        sets: &[StawSet::S71444],
         name: "Tactical Cube 138",
         class: ShipClass::BorgTacticalCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3488,7 +3489,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S138",
-        sets: &["71444", "71513a"],
+        sets: &[StawSet::S71444, StawSet::S71513a],
         name: "Borg Tactical Cube",
         class: ShipClass::BorgTacticalCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3505,7 +3506,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S137",
-        sets: &["71445", "blind_interceptor8"],
+        sets: &[StawSet::S71445, StawSet::Sblind_interceptor8],
         name: "Bajoran Interceptor",
         class: ShipClass::BajoranInterceptor,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -3522,7 +3523,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S136",
-        sets: &["71446", "71646e", "blind_seleya", "75008"],
+        sets: &[StawSet::S71446, StawSet::S71646e, StawSet::Sblind_seleya, StawSet::S75008],
         name: "Vulcan Starship",
         class: ShipClass::DKyrClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3539,7 +3540,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S135",
-        sets: &["OPArenaPrize"],
+        sets: &[StawSet::SOPArenaPrize],
         name: "S'Gorn",
         class: ShipClass::GornRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3556,7 +3557,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S134",
-        sets: &["OPArenaPrize", "71797"],
+        sets: &[StawSet::SOPArenaPrize, StawSet::S71797],
         name: "Gorn Starship",
         class: ShipClass::GornRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3573,7 +3574,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S133",
-        sets: &["i_k_s_b_moth"],
+        sets: &[StawSet::Si_k_s_b_moth],
         name: "I.K.S. B'Moth",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -3590,7 +3591,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S132",
-        sets: &["i_k_s_b_moth", "75010"],
+        sets: &[StawSet::Si_k_s_b_moth, StawSet::S75010],
         name: "K'T'Inga Class",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -3607,7 +3608,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S131",
-        sets: &["gavroche"],
+        sets: &[StawSet::Sgavroche],
         name: "Gavroche",
         class: ShipClass::MaquisRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3624,7 +3625,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S130",
-        sets: &["gavroche"],
+        sets: &[StawSet::Sgavroche],
         name: "Maquis Starship",
         class: ShipClass::MaquisRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3641,7 +3642,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S129",
-        sets: &["i_r_w_vorta_vor"],
+        sets: &[StawSet::Si_r_w_vorta_vor],
         name: "I.R.W. Vorta Vor",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -3658,7 +3659,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S128",
-        sets: &["i_r_w_vorta_vor"],
+        sets: &[StawSet::Si_r_w_vorta_vor],
         name: "Romulan Bird-of-Prey",
         class: ShipClass::RomulanBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -3675,7 +3676,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S127",
-        sets: &["3rd_wing_attack_ship"],
+        sets: &[StawSet::S3rd_wing_attack_ship],
         name: "3rd Wing Attack Ship",
         class: ShipClass::JemHadarAttackShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3692,7 +3693,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S126",
-        sets: &["u_s_s_yaeger"],
+        sets: &[StawSet::Su_s_s_yaeger],
         name: "U.S.S. Yeager",
         class: ShipClass::Saber,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3709,7 +3710,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S125",
-        sets: &["u_s_s_yaeger", "72231", "80000"],
+        sets: &[StawSet::Su_s_s_yaeger, StawSet::S72231, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::Saber,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3726,7 +3727,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S124",
-        sets: &["71523"],
+        sets: &[StawSet::S71523],
         name: "U.S.S. Enterprise",
         class: ShipClass::ConstitutionRefitClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3743,7 +3744,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S123",
-        sets: &["71523", "72260gp"],
+        sets: &[StawSet::S71523, StawSet::S72260gp],
         name: "Federation Starship",
         class: ShipClass::ConstitutionRefitClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3760,7 +3761,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S122",
-        sets: &["71522"],
+        sets: &[StawSet::S71522],
         name: "Soong",
         class: ShipClass::BorgType03,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3777,7 +3778,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S121",
-        sets: &["71522"],
+        sets: &[StawSet::S71522],
         name: "Borg Starship",
         class: ShipClass::BorgType03,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -3794,7 +3795,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S120",
-        sets: &["71524"],
+        sets: &[StawSet::S71524],
         name: "2nd Division Cruiser",
         class: ShipClass::JemHadarBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3811,7 +3812,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S119",
-        sets: &["71508"],
+        sets: &[StawSet::S71508],
         name: "Ti'Mur",
         class: ShipClass::SuurokClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3828,7 +3829,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S118",
-        sets: &["71508", "71527"],
+        sets: &[StawSet::S71508, StawSet::S71527],
         name: "Vulcan Starship",
         class: ShipClass::SuurokClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3845,7 +3846,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S117",
-        sets: &["71509"],
+        sets: &[StawSet::S71509],
         name: "U.S.S. Raven",
         class: ShipClass::AerieClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -3862,7 +3863,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S116",
-        sets: &["71509"],
+        sets: &[StawSet::S71509],
         name: "Federation Starship",
         class: ShipClass::AerieClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -3879,7 +3880,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S115",
-        sets: &["71526"],
+        sets: &[StawSet::S71526],
         name: "Enterprise NX-01",
         class: ShipClass::FederationNXClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3896,7 +3897,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S114",
-        sets: &["71527"],
+        sets: &[StawSet::S71527],
         name: "Ni'Var",
         class: ShipClass::SuurokClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3913,7 +3914,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S113",
-        sets: &["71525"],
+        sets: &[StawSet::S71525],
         name: "Scout 608",
         class: ShipClass::BorgScoutCube,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3930,7 +3931,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S112",
-        sets: &["71526"],
+        sets: &[StawSet::S71526],
         name: "Federation Starship",
         class: ShipClass::FederationNXClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3947,7 +3948,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S328",
-        sets: &["75007"],
+        sets: &[StawSet::S75007],
         name: "Borg Starship",
         class: ShipClass::BorgScoutCube,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3964,7 +3965,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S111",
-        sets: &["71525", "71646d"],
+        sets: &[StawSet::S71525, StawSet::S71646d],
         name: "Borg Starship",
         class: ShipClass::BorgScoutCube,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -3981,7 +3982,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S110",
-        sets: &["71510"],
+        sets: &[StawSet::S71510],
         name: "U.S.S. Stargazer",
         class: ShipClass::ConstellationClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -3998,7 +3999,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S109",
-        sets: &["71510", "71201"],
+        sets: &[StawSet::S71510, StawSet::S71201],
         name: "Federation Starship",
         class: ShipClass::ConstellationClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4015,7 +4016,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S108",
-        sets: &["71510b"],
+        sets: &[StawSet::S71510b],
         name: "U.S.S. Enterprise-D",
         class: ShipClass::GalaxyClassMU,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4032,7 +4033,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S107",
-        sets: &["71510b"],
+        sets: &[StawSet::S71510b],
         name: "Mirror Universe Starship",
         class: ShipClass::GalaxyClassMU,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4049,7 +4050,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S106",
-        sets: &["71510b"],
+        sets: &[StawSet::S71510b],
         name: "Assimilation Target Prime",
         class: ShipClass::GalaxyClassMU,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4066,7 +4067,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S105",
-        sets: &["71510b"],
+        sets: &[StawSet::S71510b],
         name: "Mirror Universe/Borg Starship",
         class: ShipClass::GalaxyClassMU,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4083,7 +4084,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S104",
-        sets: &["71646a"],
+        sets: &[StawSet::S71646a],
         name: "Bok's Marauder",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -4100,7 +4101,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S103",
-        sets: &["71646b"],
+        sets: &[StawSet::S71646b],
         name: "Mirror Universe Starship",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -4117,7 +4118,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S102",
-        sets: &["71646b"],
+        sets: &[StawSet::S71646b],
         name: "Prakesh",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -4134,7 +4135,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S101",
-        sets: &["71646c", "71793", "blind_nistrim_culluh"],
+        sets: &[StawSet::S71646c, StawSet::S71793, StawSet::Sblind_nistrim_culluh],
         name: "Kazon Starship",
         class: ShipClass::PredatorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4151,7 +4152,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S100",
-        sets: &["71646c"],
+        sets: &[StawSet::S71646c],
         name: "Relora-Sankur",
         class: ShipClass::PredatorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4168,7 +4169,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S099",
-        sets: &["71646d"],
+        sets: &[StawSet::S71646d],
         name: "Scout 255",
         class: ShipClass::BorgScoutCube,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4185,7 +4186,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S098",
-        sets: &["71646e"],
+        sets: &[StawSet::S71646e],
         name: "Tal'Kir",
         class: ShipClass::DKyrClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4202,7 +4203,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S097",
-        sets: &["71528"],
+        sets: &[StawSet::S71528],
         name: "Val Jean",
         class: ShipClass::MaquisRaiderB,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4219,7 +4220,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S096",
-        sets: &["71528"],
+        sets: &[StawSet::S71528],
         name: "Maquis Starship",
         class: ShipClass::MaquisRaiderB,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4236,7 +4237,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S095",
-        sets: &["71511"],
+        sets: &[StawSet::S71511],
         name: "Romulan/Borg Starship",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4253,7 +4254,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S094",
-        sets: &["71511"],
+        sets: &[StawSet::S71511],
         name: "I.R.W. Avatar of Tomed",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4270,7 +4271,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S093",
-        sets: &["71511"],
+        sets: &[StawSet::S71511],
         name: "I.R.W. Avatar of Tomed",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4287,7 +4288,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S092",
-        sets: &["71530"],
+        sets: &[StawSet::S71530],
         name: "Queen Vessel Prime",
         class: ShipClass::BorgOctahedron,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4304,7 +4305,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S091",
-        sets: &["71531", "72271"],
+        sets: &[StawSet::S71531, StawSet::S72271],
         name: "U.S.S. Enterprise-E",
         class: ShipClass::SovereignClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4322,7 +4323,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S090",
-        sets: &["71531", "72271", "80000"],
+        sets: &[StawSet::S71531, StawSet::S72271, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::SovereignClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4339,7 +4340,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S089",
-        sets: &["71512"],
+        sets: &[StawSet::S71512],
         name: "Klingon/Borg Starship",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4356,7 +4357,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S088",
-        sets: &["71512"],
+        sets: &[StawSet::S71512],
         name: "Assimilated Vessel 80279",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4373,7 +4374,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S087",
-        sets: &["71512"],
+        sets: &[StawSet::S71512],
         name: "Korok's Bird-of-Prey",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4390,7 +4391,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S086",
-        sets: &["71513a"],
+        sets: &[StawSet::S71513a],
         name: "Tactical Cube 001",
         class: ShipClass::BorgTacticalCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4407,7 +4408,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S085",
-        sets: &["71532"],
+        sets: &[StawSet::S71532],
         name: "Chang's Bird-of-Prey",
         class: ShipClass::KlingonBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4424,7 +4425,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S084",
-        sets: &["71529"],
+        sets: &[StawSet::S71529],
         name: "I.S.S. Defiant",
         class: ShipClass::DefiantClassMirror,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4441,7 +4442,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S083",
-        sets: &["71533", "72252"],
+        sets: &[StawSet::S71533, StawSet::S72252],
         name: "Scimitar",
         class: ShipClass::RemanWarbird,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4458,7 +4459,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S082",
-        sets: &["71533", "72252"],
+        sets: &[StawSet::S71533, StawSet::S72252],
         name: "Reman Starship",
         class: ShipClass::RemanWarbird,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4475,7 +4476,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S081",
-        sets: &["71532"],
+        sets: &[StawSet::S71532],
         name: "Klingon Starship",
         class: ShipClass::KlingonBirdOfPrey,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4492,7 +4493,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S080",
-        sets: &["71529"],
+        sets: &[StawSet::S71529],
         name: "Mirror Universe Starship",
         class: ShipClass::DefiantClassMirror,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4509,7 +4510,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S079",
-        sets: &["71792"],
+        sets: &[StawSet::S71792],
         name: "Cube 112",
         class: ShipClass::BorgCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4526,7 +4527,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S078",
-        sets: &["71792"],
+        sets: &[StawSet::S71792],
         name: "Borg Starship",
         class: ShipClass::BorgCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4543,7 +4544,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S141",
-        sets: &["72255"],
+        sets: &[StawSet::S72255],
         name: "Borg Starship",
         class: ShipClass::BorgCube,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4560,7 +4561,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S077",
-        sets: &["71534"],
+        sets: &[StawSet::S71534],
         name: "Fina Prime",
         class: ShipClass::VidiianBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4577,7 +4578,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S076",
-        sets: &["71534", "75004"],
+        sets: &[StawSet::S71534, StawSet::S75004],
         name: "Vidiian Starship",
         class: ShipClass::VidiianBattleCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4594,7 +4595,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S075",
-        sets: &["71810"],
+        sets: &[StawSet::S71810],
         name: "Terok Nor",
         class: ShipClass::NorClassOrbitalSpaceStation,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4611,7 +4612,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S073",
-        sets: &["71810"],
+        sets: &[StawSet::S71810],
         name: "Deep Space 9",
         class: ShipClass::NorClassOrbitalSpaceStation,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4628,7 +4629,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S072",
-        sets: &["71754"],
+        sets: &[StawSet::S71754],
         name: "1st Wave Attack Fighters",
         class: ShipClass::HidekiClassAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -4645,7 +4646,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S071",
-        sets: &["71754"],
+        sets: &[StawSet::S71754],
         name: "Dominion Attack Fighters",
         class: ShipClass::HidekiClassAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -4662,7 +4663,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S070",
-        sets: &["71513b"],
+        sets: &[StawSet::S71513b],
         name: "Trager",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -4679,7 +4680,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S069",
-        sets: &["71513b"],
+        sets: &[StawSet::S71513b],
         name: "Assimilated Vessel 64758",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4696,7 +4697,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S068",
-        sets: &["71513b"],
+        sets: &[StawSet::S71513b],
         name: "Dominion/Borg Starship",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -4713,7 +4714,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S067",
-        sets: &["71535"],
+        sets: &[StawSet::S71535],
         name: "Regent's Flagship",
         class: ShipClass::NeghVarClassMirror,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4730,7 +4731,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S066",
-        sets: &["71535"],
+        sets: &[StawSet::S71535],
         name: "Mirror Universe Starship",
         class: ShipClass::NeghVarClassMirror,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4747,7 +4748,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S065",
-        sets: &["71808"],
+        sets: &[StawSet::S71808],
         name: "Alpha Hunter",
         class: ShipClass::HirogenWarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4764,7 +4765,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S064",
-        sets: &["71808", "73042"],
+        sets: &[StawSet::S71808, StawSet::S73042],
         name: "Hirogen Starship",
         class: ShipClass::HirogenWarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4781,7 +4782,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S063",
-        sets: &["71753"],
+        sets: &[StawSet::S71753],
         name: "Fighter Squadron 6",
         class: ShipClass::FederationAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -4798,7 +4799,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S062",
-        sets: &["71753", "73041"],
+        sets: &[StawSet::S71753, StawSet::S73041],
         name: "Federation Attack Squadron",
         class: ShipClass::FederationAttackSquadron,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock],
@@ -4815,7 +4816,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S061",
-        sets: &["71536"],
+        sets: &[StawSet::S71536],
         name: "Prototype 01",
         class: ShipClass::RomulanDroneShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -4832,7 +4833,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S060",
-        sets: &["71996"],
+        sets: &[StawSet::S71996],
         name: "I.K.S. Pagh",
         class: ShipClass::KVortClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4849,7 +4850,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S059",
-        sets: &["71793"],
+        sets: &[StawSet::S71793],
         name: "Ogla-Razik",
         class: ShipClass::PredatorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4866,7 +4867,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S058",
-        sets: &["71794"],
+        sets: &[StawSet::S71794],
         name: "I.R.W. Haakona",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4883,7 +4884,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S057",
-        sets: &["71794"],
+        sets: &[StawSet::S71794],
         name: "Romulan Starship",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -4900,7 +4901,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S056",
-        sets: &["71797"],
+        sets: &[StawSet::S71797],
         name: "Gornarus",
         class: ShipClass::GornRaider,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4917,7 +4918,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S055",
-        sets: &["71798"],
+        sets: &[StawSet::S71798],
         name: "Reklar",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -4934,7 +4935,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S054",
-        sets: &["71796"],
+        sets: &[StawSet::S71796],
         name: "Mirror Universe Starship",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4951,7 +4952,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S053",
-        sets: &["71796"],
+        sets: &[StawSet::S71796],
         name: "I.S.S. Enterprise",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -4968,7 +4969,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S052",
-        sets: &["71997p"],
+        sets: &[StawSet::S71997p],
         name: "Federation Starship",
         class: ShipClass::Type7Shuttlecraft,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -4985,7 +4986,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S051",
-        sets: &["71997p"],
+        sets: &[StawSet::S71997p],
         name: "Sakharov",
         class: ShipClass::Type7Shuttlecraft,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -5002,7 +5003,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S050",
-        sets: &["71800"],
+        sets: &[StawSet::S71800],
         name: "I.S.S. Avenger",
         class: ShipClass::TerranNXClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5019,7 +5020,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S049",
-        sets: &["71799"],
+        sets: &[StawSet::S71799],
         name: "Kyana Prime",
         class: ShipClass::KrenimWeaponShip,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5036,7 +5037,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S048",
-        sets: &["71998p"],
+        sets: &[StawSet::S71998p],
         name: "U.S.S. Hood",
         class: ShipClass::ExcelsiorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5053,7 +5054,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S047",
-        sets: &["71801"],
+        sets: &[StawSet::S71801],
         name: "U.S.S. Pegasus",
         class: ShipClass::OberthClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -5071,7 +5072,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S046",
-        sets: &["71800"],
+        sets: &[StawSet::S71800],
         name: "Mirror Universe Starship",
         class: ShipClass::TerranNXClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5088,7 +5089,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S045",
-        sets: &["71799"],
+        sets: &[StawSet::S71799],
         name: "Krenim Starship",
         class: ShipClass::KrenimWeaponShip,
         action_bar: &[ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5105,7 +5106,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S044",
-        sets: &["71803"],
+        sets: &[StawSet::S71803],
         name: "Ratosha",
         class: ShipClass::BajoranScoutShip,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5122,7 +5123,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S043",
-        sets: &["71999p"],
+        sets: &[StawSet::S71999p],
         name: "I.K.S. Korinar",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5139,7 +5140,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S042",
-        sets: &["71999p", "71804"],
+        sets: &[StawSet::S71999p, StawSet::S71804],
         name: "Klingon Starship",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5156,7 +5157,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S041",
-        sets: &["71802", "80000"],
+        sets: &[StawSet::S71802, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::PrometheusClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5173,7 +5174,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S040",
-        sets: &["71804"],
+        sets: &[StawSet::S71804],
         name: "I.K.S. Ning'tao",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5190,7 +5191,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S039",
-        sets: &["71802"],
+        sets: &[StawSet::S71802],
         name: "U.S.S. Prometheus",
         class: ShipClass::PrometheusClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5207,7 +5208,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S038",
-        sets: &["blind_aldara"],
+        sets: &[StawSet::Sblind_aldara],
         name: "Aldara",
         class: ShipClass::CardassianGalorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -5224,7 +5225,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S037",
-        sets: &["72004p"],
+        sets: &[StawSet::S72004p],
         name: "Azati Prime",
         class: ShipClass::XindiAquaticCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5241,7 +5242,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S036",
-        sets: &["72004p"],
+        sets: &[StawSet::S72004p],
         name: "Xindi Starship",
         class: ShipClass::XindiAquaticCruiser,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5258,7 +5259,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S035",
-        sets: &["blind_belak"],
+        sets: &[StawSet::Sblind_belak],
         name: "I.R.W. Belak",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5275,7 +5276,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S034",
-        sets: &["72001p"],
+        sets: &[StawSet::S72001p],
         name: "U.S.S. Bellerophon",
         class: ShipClass::IntrepidClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5292,7 +5293,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S033",
-        sets: &["72001p", "80000"],
+        sets: &[StawSet::S72001p, StawSet::S80000],
         name: "Federation Starship",
         class: ShipClass::IntrepidClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5309,7 +5310,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S032",
-        sets: &["72012"],
+        sets: &[StawSet::S72012],
         name: "Bioship Beta",
         class: ShipClass::Species8472Bioship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -5326,7 +5327,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S031",
-        sets: &["blind_bioship"],
+        sets: &[StawSet::Sblind_bioship],
         name: "Bioship Omega",
         class: ShipClass::Species8472Bioship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::Regenerate],
@@ -5343,7 +5344,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S030",
-        sets: &["blind_buruk"],
+        sets: &[StawSet::Sblind_buruk],
         name: "I.K.S. Buruk",
         class: ShipClass::KVortClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5360,7 +5361,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S029",
-        sets: &["71805"],
+        sets: &[StawSet::S71805],
         name: "U.S.S. Dauntless",
         class: ShipClass::DauntlessClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5377,7 +5378,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S028",
-        sets: &["71805", "75004"],
+        sets: &[StawSet::S71805, StawSet::S75004],
         name: "Independent Starship",
         class: ShipClass::DauntlessClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5394,7 +5395,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S027",
-        sets: &["72014"],
+        sets: &[StawSet::S72014],
         name: "Delta Flyer",
         class: ShipClass::DeltaFlyerClassShuttlecraft,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -5411,7 +5412,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S026",
-        sets: &["72014", "72300p"],
+        sets: &[StawSet::S72014, StawSet::S72300p],
         name: "Federation Starship",
         class: ShipClass::DeltaFlyerClassShuttlecraft,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -5428,7 +5429,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S025",
-        sets: &["72003p"],
+        sets: &[StawSet::S72003p],
         name: "Diaspora",
         class: ShipClass::XindiInsectoidStarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -5445,7 +5446,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S024",
-        sets: &["72003p", "72273"],
+        sets: &[StawSet::S72003p, StawSet::S72273],
         name: "Xindi Starship",
         class: ShipClass::XindiInsectoidStarship,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -5462,7 +5463,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S023",
-        sets: &["blind_interceptor8"],
+        sets: &[StawSet::Sblind_interceptor8],
         name: "Interceptor 8",
         class: ShipClass::BajoranInterceptor,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5479,7 +5480,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S022",
-        sets: &["72002p"],
+        sets: &[StawSet::S72002p],
         name: "U.S.S. Intrepid",
         class: ShipClass::ConstitutionClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5496,7 +5497,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S021",
-        sets: &["71806"],
+        sets: &[StawSet::S71806],
         name: "Kreechta",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -5513,7 +5514,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S020",
-        sets: &["blind_lakota"],
+        sets: &[StawSet::Sblind_lakota],
         name: "U.S.S. Lakota",
         class: ShipClass::ExcelsiorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5530,7 +5531,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S019",
-        sets: &["blind_nistrim_culluh"],
+        sets: &[StawSet::Sblind_nistrim_culluh],
         name: "Nistrim-Culluh",
         class: ShipClass::PredatorClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::BattleStations],
@@ -5547,7 +5548,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S017",
-        sets: &["blind_nunks_marauder"],
+        sets: &[StawSet::Sblind_nunks_marauder],
         name: "Nunk's Marauder",
         class: ShipClass::DKoraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan],
@@ -5564,7 +5565,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S016",
-        sets: &["71807"],
+        sets: &[StawSet::S71807],
         name: "U.S.S. Pasteur",
         class: ShipClass::OlympicClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::BattleStations],
@@ -5581,7 +5582,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S015",
-        sets: &["71807"],
+        sets: &[StawSet::S71807],
         name: "Mirror Universe Starship",
         class: ShipClass::OlympicClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan, ActionType::BattleStations],
@@ -5598,7 +5599,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S014",
-        sets: &["72011"],
+        sets: &[StawSet::S72011],
         name: "U.S.S. Phoenix",
         class: ShipClass::NebulaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5615,7 +5616,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S013",
-        sets: &["72013"],
+        sets: &[StawSet::S72013],
         name: "Quark's Treasure",
         class: ShipClass::FerengiShuttle,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Scan],
@@ -5632,7 +5633,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S012",
-        sets: &["72015"],
+        sets: &[StawSet::S72015],
         name: "I.K.S. Rotarran",
         class: ShipClass::BRelClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5649,7 +5650,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S011",
-        sets: &["blind_seleya"],
+        sets: &[StawSet::Sblind_seleya],
         name: "Seleya",
         class: ShipClass::DKyrClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5666,7 +5667,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S010",
-        sets: &["72016"],
+        sets: &[StawSet::S72016],
         name: "R.I.S. Talvath",
         class: ShipClass::RomulanScienceVessel,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::Cloak, ActionType::SensorEcho],
@@ -5683,7 +5684,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S008",
-        sets: &["72000p"],
+        sets: &[StawSet::S72000p],
         name: "I.R.W. Terix",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5700,7 +5701,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S007",
-        sets: &["72000p"],
+        sets: &[StawSet::S72000p],
         name: "Mirror Universe Starship",
         class: ShipClass::DDeridexClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5717,7 +5718,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S006",
-        sets: &["72008"],
+        sets: &[StawSet::S72008],
         name: "U.S.S. Thunderchild",
         class: ShipClass::AkiraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5734,7 +5735,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S005",
-        sets: &["72008", "80001"],
+        sets: &[StawSet::S72008, StawSet::S80001],
         name: "Federation Starship",
         class: ShipClass::AkiraClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Scan, ActionType::BattleStations],
@@ -5751,7 +5752,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         squadron: false,
     }, StawShipArchetype {
         id: "S004",
-        sets: &["blind_tohkaht"],
+        sets: &[StawSet::Sblind_tohkaht],
         name: "I.K.S. Toh'Kaht",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5768,7 +5769,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S003",
-        sets: &["blind_tohkaht"],
+        sets: &[StawSet::Sblind_tohkaht],
         name: "Mirror Universe Starship",
         class: ShipClass::VorChaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5785,7 +5786,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S002",
-        sets: &["72009"],
+        sets: &[StawSet::S72009],
         name: "I.K.S. T'Ong",
         class: ShipClass::KTIngaClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
@@ -5802,7 +5803,7 @@ pub static ALL_SHIPS: &'static [StawShipArchetype] = &[
         alliance: false,
     }, StawShipArchetype {
         id: "S001",
-        sets: &["72010"],
+        sets: &[StawSet::S72010],
         name: "I.R.W. Vrax",
         class: ShipClass::ValdoreClass,
         action_bar: &[ActionType::EvasiveManeuvers, ActionType::AcquireTargetLock, ActionType::Cloak, ActionType::SensorEcho],
